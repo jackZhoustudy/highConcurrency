@@ -48,4 +48,5 @@ public static void main(String[] args) {  <br/>
 }  <br/>
 不是说一个线程执行synchronized代码块时其它的线程会受到阻塞吗，为什么上面thread1和thread2同时执行，因为synchronized之锁定对象，  <br/>
 每个对象只有一个锁与之关联。  <br/>
+这时创建了两个SyncThread的对象syncThread1和syncThread2，线程thread1执行的是syncThread1对象中的synchronized代码(run)，而线程thread2执行的是syncThread2对象中的synchronized代码(run)；我们知道synchronized锁定的是对象，这时会有两把锁分别锁定syncThread1对象和syncThread2对象，而这两把锁是互不干扰的，不形成互斥，所以两个线程可以同时执行。
 
